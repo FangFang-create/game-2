@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Combo Cats</title>
+    <meta
+      name="description"
+      content="跟着猫咪舞蹈视频打节奏，在鼓点经过时点击屏幕叠高 combo。"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <section class="game-shell">
+        <img
+          class="game-shell__background"
+          src="./assets/game-background.png"
+          alt="Combo Cats game background"
+        />
+
+        <div class="game-shell__overlay">
+          <section class="video-stage" aria-label="Dancing cats stage">
+            <div class="video-stage__glow"></div>
+            <div class="video-stage__badge">CAT RHYTHM REMIX</div>
+            <video
+              id="dance-video"
+              class="video-stage__video"
+              src="./assets/cats-dance.mp4"
+              playsinline
+              preload="auto"
+            ></video>
+          </section>
+
+          <section class="hud" aria-label="Game score panel">
+            <div class="combo-card">
+              <span class="combo-card__label">Combo</span>
+              <strong id="combo-count" class="combo-card__value">0</strong>
+              <span id="judgement-text" class="combo-card__judgement">Ready?</span>
+            </div>
+
+            <div class="power-card">
+              <div class="power-card__topline">
+                <span>NEKO POWER</span>
+                <strong id="accuracy-text">100%</strong>
+              </div>
+              <div class="power-card__track">
+                <div id="power-fill" class="power-card__fill"></div>
+              </div>
+            </div>
+          </section>
+
+          <section id="tap-surface" class="track-zone" aria-label="Rhythm track">
+            <div class="track-zone__pulse"></div>
+            <div class="track-zone__lane">
+              <div class="track-zone__guide"></div>
+              <div class="track-zone__judge">
+                <span class="track-zone__judge-ring"></span>
+                <span class="track-zone__judge-ring track-zone__judge-ring--outer"></span>
+              </div>
+              <div id="notes-layer" class="track-zone__notes" aria-hidden="true"></div>
+            </div>
+            <p class="track-zone__hint">跟着鼓点点击屏幕，猫咪落到光圈里就能叠 combo</p>
+          </section>
+
+          <section id="start-screen" class="modal-card modal-card--visible" aria-live="polite">
+            <p class="modal-card__eyebrow">Mobile Rhythm Game</p>
+            <h1>Combo Cats</h1>
+            <p>
+              中间播放你给的猫咪视频原音，下方彩色猫咪会随节奏滑过判定点。点得越准，
+              combo 越高。
+            </p>
+            <button id="start-button" class="primary-button" type="button">Tap To Start</button>
+          </section>
+
+          <section id="result-screen" class="modal-card" aria-live="polite">
+            <p class="modal-card__eyebrow">Stage Cleared</p>
+            <h2>猫咪派对结束啦</h2>
+            <div class="result-grid">
+              <div>
+                <span>最高 Combo</span>
+                <strong id="best-combo">0</strong>
+              </div>
+              <div>
+                <span>命中率</span>
+                <strong id="final-accuracy">0%</strong>
+              </div>
+              <div>
+                <span>Perfect</span>
+                <strong id="perfect-count">0</strong>
+              </div>
+              <div>
+                <span>Score</span>
+                <strong id="final-score">0</strong>
+              </div>
+            </div>
+            <button id="restart-button" class="primary-button" type="button">Play Again</button>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
