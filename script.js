@@ -1,6 +1,7 @@
 const video = document.querySelector("#dance-video");
 const gameShell = document.querySelector(".game-shell");
 const notesLayer = document.querySelector("#notes-layer");
+const tapSurface = document.querySelector("#tap-surface");
 const startScreen = document.querySelector("#start-screen");
 const resultScreen = document.querySelector("#result-screen");
 const startButton = document.querySelector("#start-button");
