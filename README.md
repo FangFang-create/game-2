@@ -22,4 +22,8 @@ python3 -m http.server 4173
 
 ## 部署
 
-仓库内自带 GitHub Pages workflow，推送到 `main` 后会自动发布静态站点。
+静态文件推到 GitHub 仓库后，可直接用 CDN 预览：
+
+- `https://cdn.jsdelivr.net/gh/FangFang-create/game-2@main/index.html`
+
+如果后续要切换成官方 GitHub Pages 域名，可在仓库设置里启用 Pages，或使用带 `workflow` 权限的凭证再补一个自动部署 workflow。
