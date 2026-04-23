@@ -539,9 +539,9 @@ body {
 
 .start-screen__hint {
   margin: 0.45rem 0 0;
-  color: rgba(19, 23, 10, 0.82);
-  font-size: 0.58rem;
-  font-weight: 800;
+  color: rgba(76, 81, 75, 0.72);
+  font-size: 0.5rem;
+  font-weight: 700;
   letter-spacing: 0.04em;
   text-transform: uppercase;
 }
