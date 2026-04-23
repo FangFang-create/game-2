@@ -1,29 +1,30 @@
 # Combo Cats
 
-一个竖屏移动端节奏小游戏：中间播放猫咪跳舞视频并保留原音，底部彩色小猫 note 会随节奏横向经过判定点，玩家点击屏幕叠高 combo。
+A portrait mobile rhythm game: the center stage plays the original dancing cat video with audio, while colorful cat notes slide through the timing ring so players can tap to build combo.
 
-## 文件结构
+## Files
 
-- `index.html`：页面骨架
-- `styles.css`：移动端视觉与交互样式
-- `script.js`：节奏 note、点击判定、combo 与结算逻辑
-- `assets/cats-dance.mp4`：游戏主视频
-- `assets/game-background.png`：用户提供的底图
+- `index.html`: page structure
+- `styles.css`: mobile visuals and interaction styles
+- `script.js`: rhythm notes, tap judgement, combo, and results logic
+- `assets/cats-dance.mp4`: main gameplay video
+- `assets/game-background.png`: provided background image
 
-## 本地预览
+## Local Preview
 
-在仓库根目录执行：
+Run this from the repository root:
 
 ```bash
 python3 -m http.server 4173
 ```
 
-然后打开 [http://localhost:4173](http://localhost:4173)。
+Then open [http://localhost:4173](http://localhost:4173).
 
-## 部署
+## Deployment
 
-静态文件推到 GitHub 仓库后，可直接用 CDN 预览：
+After pushing static files to GitHub, preview with:
 
 - `https://cdn.jsdelivr.net/gh/FangFang-create/game-2@main/index.html`
+- `https://fangfang-create.github.io/game-2/`
 
-如果后续要切换成官方 GitHub Pages 域名，可在仓库设置里启用 Pages，或使用带 `workflow` 权限的凭证再补一个自动部署 workflow。
+GitHub Pages can publish this static site directly from the `main` branch root.

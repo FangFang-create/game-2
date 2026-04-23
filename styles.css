@@ -71,60 +71,97 @@ body {
   pointer-events: none;
 }
 
+.song-strip {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 13.35%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.38rem;
+  color: #10120d;
+  font-size: clamp(0.9rem, 3.7vw, 1.25rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.song-strip strong {
+  font-weight: 900;
+}
+
+.song-strip__equalizer {
+  display: inline-flex;
+  align-items: flex-end;
+  gap: 0.12rem;
+  height: 1rem;
+  margin-right: 0.2rem;
+}
+
+.song-strip__equalizer span {
+  display: block;
+  width: 0.12rem;
+  height: 0.55rem;
+  border-radius: 999px;
+  background: #10120d;
+  animation: note-dance 620ms ease-in-out infinite;
+}
+
+.song-strip__equalizer span:nth-child(2) {
+  height: 0.82rem;
+  animation-delay: 110ms;
+}
+
+.song-strip__equalizer span:nth-child(3) {
+  height: 1rem;
+  animation-delay: 220ms;
+}
+
+.song-strip__equalizer span:nth-child(4) {
+  height: 0.68rem;
+  animation-delay: 330ms;
+}
+
+@keyframes note-dance {
+  0%,
+  100% {
+    transform: scaleY(0.55);
+  }
+
+  50% {
+    transform: scaleY(1.18);
+  }
+}
+
 .video-stage {
   position: absolute;
-  left: 13%;
-  top: 21%;
-  width: 74%;
-  height: 45%;
+  left: 0;
+  right: 0;
+  top: 18%;
+  width: 100%;
+  height: 44.5%;
   display: grid;
   place-items: center;
   pointer-events: none;
-}
-
-.video-stage__glow {
-  position: absolute;
-  inset: 8% 4% 10%;
-  border-radius: 44% 44% 30% 30%;
-  background:
-    radial-gradient(circle at 50% 24%, rgba(209, 255, 114, 0.58), transparent 32%),
-    radial-gradient(circle at 50% 60%, rgba(111, 255, 140, 0.24), transparent 50%);
-  filter: blur(1.4rem);
-  transform: scale(1.05);
-}
-
-.video-stage__badge {
-  position: absolute;
-  top: 1.5rem;
-  padding: 0.45rem 0.9rem;
-  border: 0.125rem solid rgba(33, 40, 23, 0.18);
-  border-radius: 999px;
-  background: rgba(243, 255, 213, 0.85);
-  color: #32451d;
-  font-size: 0.72rem;
-  font-weight: 800;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
 }
 
 .video-stage__video {
   position: relative;
   width: 100%;
   height: 100%;
-  object-fit: contain;
-  border-radius: 2rem;
-  filter: drop-shadow(0 1rem 2rem rgba(87, 188, 50, 0.2));
+  object-fit: cover;
+  border-radius: 0;
 }
 
 .hud {
   position: absolute;
-  left: 7%;
-  right: 7%;
-  bottom: 19%;
+  left: 6.8%;
+  right: 3.8%;
+  bottom: 18.85%;
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-  gap: 1rem;
+  gap: 0.7rem;
 }
 
 .combo-card,
@@ -137,9 +174,16 @@ body {
 }
 
 .combo-card {
-  min-width: 9rem;
-  padding: 0.8rem 1rem 0.85rem;
-  border-radius: 1.45rem;
+  min-width: 7rem;
+  padding: 0.2rem 0.35rem;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
+  text-shadow:
+    0 0.1rem 0 #d6ff79,
+    0 0 0.35rem rgba(191, 255, 96, 0.95);
 }
 
 .combo-card__label,
@@ -155,26 +199,29 @@ body {
 }
 
 .combo-card__value {
-  display: block;
-  margin-top: 0.1rem;
-  color: #f5ffdc;
-  font-size: clamp(2rem, 5vw, 2.7rem);
+  display: inline-block;
+  color: #10120d;
+  font-size: clamp(1.35rem, 4vw, 1.7rem);
   font-weight: 900;
   line-height: 1;
 }
 
 .combo-card__judgement {
-  display: block;
-  margin-top: 0.25rem;
-  color: var(--glow-green);
-  font-size: 0.92rem;
-  font-weight: 700;
+  display: inline-block;
+  margin-left: 0.18rem;
+  color: #10120d;
+  font-size: clamp(1.15rem, 3.8vw, 1.45rem);
+  font-weight: 900;
 }
 
 .power-card {
   flex: 1;
-  padding: 0.8rem 0.95rem 0.92rem;
-  border-radius: 1.4rem;
+  padding: 0.08rem 0 0.18rem;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
 }
 
 .power-card__topline {
@@ -185,14 +232,14 @@ body {
 }
 
 .power-card__topline strong {
-  color: #f5ffdc;
-  font-size: 1rem;
+  color: #10120d;
+  font-size: 0.82rem;
 }
 
 .power-card__track {
-  margin-top: 0.5rem;
+  margin-top: 0.14rem;
   width: 100%;
-  height: 0.8rem;
+  height: 0.58rem;
   border-radius: 999px;
   overflow: hidden;
   background:
@@ -211,10 +258,10 @@ body {
 
 .track-zone {
   position: absolute;
-  left: 4%;
-  right: 4%;
-  bottom: 12.1%;
-  height: 10.7%;
+  left: 5%;
+  right: 5%;
+  bottom: 10.75%;
+  height: 9.2%;
   pointer-events: auto;
   cursor: pointer;
   user-select: none;
@@ -282,7 +329,7 @@ body {
 .track-zone__hint {
   position: absolute;
   left: 0.4rem;
-  bottom: -0.55rem;
+  bottom: -0.36rem;
   right: 0.4rem;
   text-align: center;
   color: rgba(19, 23, 10, 0.72);
@@ -387,11 +434,18 @@ body {
 
 .modal-card {
   position: absolute;
-  left: 7%;
-  right: 7%;
-  top: 24%;
-  padding: 1.3rem 1.2rem 1.35rem;
-  border-radius: 1.8rem;
+  left: 0;
+  right: 0;
+  top: 18%;
+  height: 44.5%;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
   text-align: center;
   opacity: 0;
   transform: translateY(0.8rem) scale(0.97);
@@ -405,6 +459,20 @@ body {
   opacity: 1;
   transform: translateY(0) scale(1);
   pointer-events: auto;
+}
+
+#result-screen.modal-card {
+  left: 7%;
+  right: 7%;
+  top: 31%;
+  height: auto;
+  display: block;
+  padding: 1.3rem 1.2rem 1.35rem;
+  border-radius: 1.8rem;
+  backdrop-filter: blur(0.9rem);
+  background: rgba(18, 20, 16, 0.78);
+  border: 0.08rem solid rgba(236, 255, 194, 0.16);
+  box-shadow: var(--panel-shadow);
 }
 
 .modal-card h1,
@@ -440,6 +508,30 @@ body {
 
 .primary-button:hover {
   filter: brightness(1.04);
+}
+
+.play-button {
+  width: clamp(3.1rem, 13vw, 4.4rem);
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  border: none;
+  border-radius: 50%;
+  background: rgba(42, 44, 42, 0.45);
+  box-shadow:
+    0 0.35rem 1.1rem rgba(0, 0, 0, 0.15),
+    inset 0 0 0 0.08rem rgba(255, 255, 255, 0.25);
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+.play-button span {
+  width: 0;
+  height: 0;
+  margin-left: 0.22rem;
+  border-top: 0.62rem solid transparent;
+  border-bottom: 0.62rem solid transparent;
+  border-left: 0.9rem solid rgba(255, 255, 255, 0.92);
 }
 
 .result-grid {

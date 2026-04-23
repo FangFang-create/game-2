@@ -72,7 +72,7 @@ function resetUi() {
 
   comboCount.textContent = "0";
   judgementText.textContent = "Ready?";
-  judgementText.style.color = "var(--glow-green)";
+  judgementText.style.color = "#10120d";
   accuracyText.textContent = "100%";
   powerFill.style.width = "0%";
 }
@@ -254,7 +254,7 @@ function startGame() {
   if (playAttempt instanceof Promise) {
     playAttempt.catch(() => {
       startScreen.classList.add("modal-card--visible");
-      setFeedback("Tap To Start", "var(--glow-green)");
+      setFeedback("Tap To Start", "#10120d");
     });
   }
 

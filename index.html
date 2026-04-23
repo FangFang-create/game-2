@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <title>Combo Cats</title>
     <meta
       name="description"
-      content="跟着猫咪舞蹈视频打节奏，在鼓点经过时点击屏幕叠高 combo。"
+      content="Tap in rhythm with the dancing cats and build the biggest combo."
     />
     <link rel="stylesheet" href="./styles.css" />
   </head>
@@ -20,9 +20,18 @@
         />
 
         <div class="game-shell__overlay">
+          <section class="song-strip" aria-label="Now playing">
+            <span class="song-strip__equalizer" aria-hidden="true">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </span>
+            <span>Playing:</span>
+            <strong>Trouble Maker</strong>
+          </section>
+
           <section class="video-stage" aria-label="Dancing cats stage">
-            <div class="video-stage__glow"></div>
-            <div class="video-stage__badge">CAT RHYTHM REMIX</div>
             <video
               id="dance-video"
               class="video-stage__video"
@@ -60,29 +69,25 @@
               </div>
               <div id="notes-layer" class="track-zone__notes" aria-hidden="true"></div>
             </div>
-            <p class="track-zone__hint">跟着鼓点点击屏幕，猫咪落到光圈里就能叠 combo</p>
+            <p class="track-zone__hint">Tap when a cat lands inside the ring to stack combo</p>
           </section>
 
           <section id="start-screen" class="modal-card modal-card--visible" aria-live="polite">
-            <p class="modal-card__eyebrow">Mobile Rhythm Game</p>
-            <h1>Combo Cats</h1>
-            <p>
-              中间播放你给的猫咪视频原音，下方彩色猫咪会随节奏滑过判定点。点得越准，
-              combo 越高。
-            </p>
-            <button id="start-button" class="primary-button" type="button">Tap To Start</button>
+            <button id="start-button" class="play-button" type="button" aria-label="Start game">
+              <span></span>
+            </button>
           </section>
 
           <section id="result-screen" class="modal-card" aria-live="polite">
             <p class="modal-card__eyebrow">Stage Cleared</p>
-            <h2>猫咪派对结束啦</h2>
+            <h2>Cat Party Complete</h2>
             <div class="result-grid">
               <div>
-                <span>最高 Combo</span>
+                <span>Best Combo</span>
                 <strong id="best-combo">0</strong>
               </div>
               <div>
-                <span>命中率</span>
+                <span>Accuracy</span>
                 <strong id="final-accuracy">0%</strong>
               </div>
               <div>
