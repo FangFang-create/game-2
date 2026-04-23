@@ -7,7 +7,7 @@ A portrait mobile rhythm game: the center stage plays the original dancing cat v
 - `index.html`: page structure
 - `styles.css`: mobile visuals and interaction styles
 - `script.js`: rhythm notes, tap judgement, combo, and results logic
-- `assets/cats-dance.mp4`: main gameplay video
+- `assets/cats-dance.mov`: main gameplay video
 - `assets/game-background.png`: provided background image
 
 ## Local Preview
