@@ -75,7 +75,7 @@ body {
   position: absolute;
   left: 0;
   right: 0;
-  top: 21.3%;
+  top: calc(21.3% + 15pt);
   z-index: 5;
   display: flex;
   align-items: center;
@@ -492,7 +492,7 @@ body {
   left: 5%;
   right: 5%;
   top: auto;
-  bottom: calc(10.75% + 20pt);
+  bottom: calc(10.75% + 80pt);
   height: 9.2%;
   z-index: 6;
   display: flex;
