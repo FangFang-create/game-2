@@ -71,27 +71,6 @@ body {
   pointer-events: none;
 }
 
-.game-title {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 16.05%;
-  z-index: 5;
-  margin: 0;
-  color: #050804;
-  font-size: clamp(2.05rem, 9.6vw, 3.25rem);
-  font-weight: 950;
-  line-height: 1;
-  letter-spacing: -0.08em;
-  text-align: center;
-  text-shadow:
-    0 0 0.5rem rgba(198, 255, 105, 0.95),
-    0.18rem 0 0 #caff72,
-    -0.18rem 0 0 #caff72,
-    0 0.18rem 0 #caff72,
-    0 -0.18rem 0 #caff72;
-}
-
 .song-strip {
   position: absolute;
   left: 0;
@@ -176,6 +155,7 @@ body {
   max-height: 100%;
   object-fit: contain;
   border-radius: 0;
+  transform: translateY(30pt);
 }
 
 .hud {
@@ -512,7 +492,7 @@ body {
   left: 5%;
   right: 5%;
   top: auto;
-  bottom: 10.75%;
+  bottom: calc(10.75% + 20pt);
   height: 9.2%;
   z-index: 6;
   display: flex;
