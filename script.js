@@ -31,6 +31,14 @@ const NOTE_COLORS = [
   "#BA9CFF",
 ];
 
+const NOTE_IMAGES = [
+  'url("./assets/cat-green.svg")',
+  'url("./assets/cat-green.svg")',
+  'url("./assets/cat-white.svg")',
+  'url("./assets/cat-green.svg")',
+  'url("./assets/cat-white.svg")',
+];
+
 const state = {
   started: false,
   rafId: 0,
@@ -93,12 +101,15 @@ function buildBeatmap(duration) {
 
   while (time < duration - 0.65) {
     const color = NOTE_COLORS[index % NOTE_COLORS.length];
+    const element = createNoteElement(color);
+    element.style.setProperty("--note-image", NOTE_IMAGES[index % NOTE_IMAGES.length]);
+
     state.notes.push({
       id: index,
       time,
       color,
       judged: false,
-      element: createNoteElement(color),
+      element,
     });
 
     time += pattern[index % pattern.length];

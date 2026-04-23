@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="white cat note">
+  <defs>
+    <radialGradient id="fur" cx="40%" cy="30%" r="75%">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="0.58" stop-color="#f3eee7"/>
+      <stop offset="1" stop-color="#d6c7b9"/>
+    </radialGradient>
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="5" stdDeviation="4" flood-color="#ff8f78" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+  <circle cx="60" cy="60" r="55" fill="#ff806d"/>
+  <circle cx="60" cy="61" r="45" fill="url(#fur)" filter="url(#soft)"/>
+  <path d="M31 37 25 16 46 30Z" fill="#f4eee8"/>
+  <path d="M89 37 95 16 74 30Z" fill="#f4eee8"/>
+  <path d="M30 26c15-8 39-8 62 0" fill="none" stroke="#ffffff" stroke-width="10" stroke-linecap="round"/>
+  <path d="M33 25c12 9 43 9 56 0" fill="none" stroke="#ff6e55" stroke-width="4" stroke-dasharray="3 4" stroke-linecap="round"/>
+  <circle cx="43" cy="60" r="5" fill="#1c1714"/>
+  <circle cx="77" cy="60" r="5" fill="#1c1714"/>
+  <path d="M42 84c6-10 15-12 24-4" fill="none" stroke="#352b25" stroke-width="5" stroke-linecap="round"/>
+</svg>

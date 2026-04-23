@@ -75,7 +75,7 @@ body {
   position: absolute;
   left: 0;
   right: 0;
-  top: 8.65%;
+  top: 16.05%;
   z-index: 5;
   margin: 0;
   color: #050804;
@@ -96,7 +96,7 @@ body {
   position: absolute;
   left: 0;
   right: 0;
-  top: 13.35%;
+  top: 21.3%;
   z-index: 5;
   display: flex;
   align-items: center;
@@ -159,9 +159,9 @@ body {
   position: absolute;
   left: 0;
   right: 0;
-  top: 17.35%;
+  top: 25.35%;
   width: 100%;
-  height: 46.3%;
+  height: 37.8%;
   z-index: 1;
   display: grid;
   place-items: center;
@@ -181,7 +181,7 @@ body {
   position: absolute;
   left: 6.8%;
   right: 3.8%;
-  bottom: 18.85%;
+  bottom: 18.65%;
   z-index: 4;
   display: flex;
   align-items: flex-end;
@@ -370,6 +370,7 @@ body {
 
 .note {
   --note-color: #9de458;
+  --note-image: url("./assets/cat-green.svg");
   position: absolute;
   top: 50%;
   width: clamp(2.9rem, 8vw, 3.7rem);
@@ -377,8 +378,7 @@ body {
   transform: translate(-50%, -50%) scale(1);
   border-radius: 50%;
   background:
-    radial-gradient(circle at 34% 28%, rgba(255, 255, 255, 0.9), transparent 18%),
-    radial-gradient(circle at 50% 58%, color-mix(in srgb, var(--note-color) 82%, #ffffff 18%), transparent 60%),
+    var(--note-image) center / cover no-repeat,
     color-mix(in srgb, var(--note-color) 92%, #ffffff 8%);
   border: 0.22rem solid rgba(255, 255, 255, 0.82);
   box-shadow:
@@ -389,63 +389,12 @@ body {
     opacity 120ms linear;
 }
 
-.note::before,
-.note::after {
-  content: "";
-  position: absolute;
-  top: -0.28rem;
-  width: 0.95rem;
-  height: 0.95rem;
-  background: inherit;
-  border: inherit;
-  border-bottom: none;
-  border-right: none;
-  border-radius: 0.25rem 0.72rem 0.1rem 0.72rem;
-}
-
-.note::before {
-  left: 0.38rem;
-  transform: rotate(-32deg);
-}
-
-.note::after {
-  right: 0.38rem;
-  transform: scaleX(-1) rotate(-32deg);
-}
-
 .note__face {
-  position: absolute;
-  inset: 0;
-}
-
-.note__face::before,
-.note__face::after {
-  content: "";
-  position: absolute;
-  top: 42%;
-  width: 0.35rem;
-  height: 0.42rem;
-  border-radius: 999px;
-  background: rgba(24, 29, 17, 0.92);
-}
-
-.note__face::before {
-  left: 32%;
-}
-
-.note__face::after {
-  right: 32%;
+  display: none;
 }
 
 .note__nose {
-  position: absolute;
-  left: 50%;
-  top: 57%;
-  width: 0.5rem;
-  height: 0.33rem;
-  transform: translateX(-50%);
-  border-radius: 40% 40% 70% 70%;
-  background: rgba(32, 36, 20, 0.9);
+  display: none;
 }
 
 .note.is-hit {
@@ -462,8 +411,8 @@ body {
   position: absolute;
   left: 0;
   right: 0;
-  top: 17.35%;
-  height: 46.3%;
+  top: 25.35%;
+  height: 37.8%;
   z-index: 5;
   display: grid;
   place-items: center;
