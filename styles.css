@@ -75,7 +75,7 @@ body {
   position: absolute;
   left: 0;
   right: 0;
-  top: calc(21.3% + 15pt);
+  top: calc(21.3% + 10pt);
   z-index: 5;
   display: flex;
   align-items: center;
@@ -187,9 +187,9 @@ body {
   background: transparent;
   box-shadow: none;
   backdrop-filter: none;
-  text-shadow:
-    0 0.1rem 0 #d6ff79,
-    0 0 0.35rem rgba(191, 255, 96, 0.95);
+  font-family:
+    "Arial Rounded MT Bold", "Hiragino Maru Gothic ProN", "Hannotate SC", "Marker Felt",
+    "Comic Sans MS", cursive;
 }
 
 .combo-card__label,
@@ -206,18 +206,45 @@ body {
 
 .combo-card__value {
   display: inline-block;
-  color: #10120d;
+  color: #050804;
   font-size: clamp(1.35rem, 4vw, 1.7rem);
   font-weight: 900;
   line-height: 1;
+  text-shadow:
+    1px 0 0 #b8ff5e,
+    -1px 0 0 #b8ff5e,
+    0 1px 0 #b8ff5e,
+    0 -1px 0 #b8ff5e,
+    1px 1px 0 #b8ff5e,
+    -1px 1px 0 #b8ff5e,
+    1px -1px 0 #b8ff5e,
+    -1px -1px 0 #b8ff5e;
 }
 
 .combo-card__judgement {
   display: inline-block;
   margin-left: 0.18rem;
-  color: #10120d;
+  color: #050804;
   font-size: clamp(1.15rem, 3.8vw, 1.45rem);
   font-weight: 900;
+  text-shadow:
+    1px 0 0 #b8ff5e,
+    -1px 0 0 #b8ff5e,
+    0 1px 0 #b8ff5e,
+    0 -1px 0 #b8ff5e,
+    1px 1px 0 #b8ff5e,
+    -1px 1px 0 #b8ff5e,
+    1px -1px 0 #b8ff5e,
+    -1px -1px 0 #b8ff5e;
+}
+
+.combo-card__label {
+  color: #050804;
+  text-shadow:
+    1px 0 0 #b8ff5e,
+    -1px 0 0 #b8ff5e,
+    0 1px 0 #b8ff5e,
+    0 -1px 0 #b8ff5e;
 }
 
 .power-card {
@@ -343,6 +370,10 @@ body {
   font-size: 0.58rem;
   font-weight: 800;
   letter-spacing: 0.04em;
+}
+
+.game-shell__overlay:has(#start-screen.modal-card--visible) .track-zone__hint {
+  opacity: 0;
 }
 
 .game-shell:not(.is-playing) .track-zone__notes {
@@ -492,10 +523,11 @@ body {
   left: 5%;
   right: 5%;
   top: auto;
-  bottom: calc(10.75% + 80pt);
+  bottom: calc(10.75% + 110pt);
   height: 9.2%;
   z-index: 6;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   transform: translateY(0.4rem) scale(0.98);
@@ -503,6 +535,15 @@ body {
 
 #start-screen.modal-card--visible {
   transform: translateY(0) scale(1);
+}
+
+.start-screen__hint {
+  margin: 0.45rem 0 0;
+  color: rgba(19, 23, 10, 0.82);
+  font-size: 0.58rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
 
 @keyframes start-pulse {
